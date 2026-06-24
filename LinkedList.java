@@ -109,10 +109,47 @@ public void printLL(){
     return slow;
   }
 
-  public Boolean checkPal( Node head){
-    Node midNode= findMidNode(head);
+//   public Boolean checkPal( Node head){
+//     Node midNode= findMidNode(head);
 
-  }
+//     jit
+
+//   }
+
+
+
+ public void removeLoop(){
+    Node slow=head;
+    Node fast = head;
+    while(fast!=null && fast.next!=null){
+
+        slow=slow.next;
+        fast=fast.next.next;
+        if(slow==fast){
+            break;
+        }
+     }
+
+     slow= head;
+     Node prev=null;
+     while ( fast!=slow){
+        prev=fast;
+        fast=fast.next;
+        slow=slow.next;
+
+     }
+
+     prev.next=null;
+
+     
+
+ }
+
+
+
+ public void addfirstDl(){
+    
+ }
 
 
 
